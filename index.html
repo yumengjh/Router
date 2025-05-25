@@ -694,7 +694,7 @@
 
         // 创建路由器实例
         const router = createRouter({
-            mode: RouterMode.HISTORY, // 使用HISTORY模式,
+            mode: RouterMode.HASH, // 使用HISTORY模式,
             routes: routes,
             cacheSize: 30,
             scrollBehavior(to, from, savedPosition) {
@@ -724,7 +724,8 @@
                 next();
             } else {
                 // 其他页面添加小延迟模拟加载
-                setTimeout(() => next(), Math.random() * 500 + 200);
+                // setTimeout(() => next(), Math.random() * 500 + 200);
+                next();
             }
         });
 
